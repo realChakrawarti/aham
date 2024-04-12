@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next",
+    "dev": "next --port 42069",
     "build": "next build",
     "start": "next start"
   },
