@@ -2,15 +2,18 @@
  * @type {import('next').NextConfig}
  */
 
-const isDevelopement = process.env.NODE_ENV === "development" || false;
+console.log(">>>>>>>", process.env.NODE_ENV);
+const isProduction = process.env.NODE_ENV === "production" || false;
 const prefixPath = "/aham";
 
 const nextConfig = {
   reactStrictMode: true,
-  basePath: isDevelopement ? "" : prefixPath,
-  assetPrefix: isDevelopement ? "" : prefixPath,
+  basePath: isProduction ? prefixPath : "",
+  assetPrefix: isProduction ? prefixPath : "",
   output: "export",
   images: {
+    loader: "custom",
+    loaderFile: "./src/lib/customImageLoader.ts",
     unoptimized: true,
   },
 };
