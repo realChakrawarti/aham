@@ -1,4 +1,4 @@
-import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/utils/constants";
+import { HOME_OG_IMAGE_URL } from "@/utils/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -9,8 +9,8 @@ import Header from "@/components/header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `Next.js Blog Example with ${CMS_NAME}`,
-  description: `A statically generated blog example using Next.js and ${CMS_NAME}.`,
+  title: `Next.js Blog Example`,
+  description: `A statically generated blog example using Next.js.`,
   openGraph: {
     images: [HOME_OG_IMAGE_URL],
   },
