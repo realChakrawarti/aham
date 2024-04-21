@@ -1,27 +1,5 @@
+import { navPaths } from "@/services/paths";
 import Link from "next/link";
-
-const navPaths = [
-  {
-    label: "Blogs",
-    path: "/blogs",
-  },
-  {
-    label: "Notes",
-    path: "/notes",
-  },
-  {
-    label: "Now",
-    path: "/now",
-  },
-  {
-    label: "Projects",
-    path: "/projects",
-  },
-  {
-    label: "Resume",
-    path: "/resume",
-  },
-];
 
 function NavLinks() {
   return (
@@ -39,10 +17,12 @@ function NavLinks() {
 
 export default function Header() {
   return (
-    <header className="p-2 h-12 flex justify-between">
-      <div className="text-4xl tracking-wider" id="logo">
-        AHAM
-      </div>
+    <header className="h-12 flex justify-between">
+      <Link href={"/"}>
+        <div className="text-4xl tracking-wider" id="logo">
+          अहम्
+        </div>
+      </Link>
       <NavLinks />
     </header>
   );

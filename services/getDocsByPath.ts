@@ -13,7 +13,7 @@ export function getDocBySlug<T>(slug: string, directory: string) {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  const docData = { ...data, slug: realSlug, content };
+  const docData = { ...data, slug: realSlug, content } as T;
 
   return docData;
 }

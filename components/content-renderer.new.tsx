@@ -4,13 +4,13 @@ type Props = {
   content: string;
 };
 
-export default async function PostBody({ content }: Props) {
+export default async function ContentRenderer({ content }: Props) {
   const htmlContent = await markdownToHtml(content || "");
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="dark">
       <div
-        className="prose prose-slate"
+        className="prose prose-invert prose-xl lg:prose-base"
         dangerouslySetInnerHTML={{ __html: htmlContent }}
       />
     </div>

@@ -1,9 +1,7 @@
-import Container from "@/components/container";
+import { getHomeContent } from "@/services/getHomeContent";
 
 export default function Index() {
-  return (
-    <main>
-      <Container></Container>
-    </main>
-  );
+  const homePosts = getHomeContent();
+
+  return <main>{JSON.stringify(homePosts, null, 2)}</main>;
 }

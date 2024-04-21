@@ -1,8 +1,14 @@
-import { join } from "path";
+import { getAllDocs } from "./getDocsByPath";
+import { blogDirectory, noteDirectory } from "./paths";
 
-const blogsDirectory = join(process.cwd(), "documents", "blogs");
-const notesDirectory = join(process.cwd(), "documents", "notes");
-const nowDirectory = join(process.cwd(), "documents", "now");
-const projectsDirectory = join(process.cwd(), "documents", "projects");
+export const getHomeContent = () => {
+  const data = [];
 
-export const getHomeContent = () => {};
+  const blogs = getAllDocs(blogDirectory).slice(0, 3);
+  const notes = getAllDocs(noteDirectory).slice(0, 3);
+
+  data.push(blogs);
+  data.push(notes);
+
+  return data;
+};

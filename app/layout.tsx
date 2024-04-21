@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import "./globals.css";
-import Link from "next/link";
 import Header from "@/components/header";
+import Container from "@/components/container";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `Next.js Blog Example`,
-  description: `A statically generated blog example using Next.js.`,
+  title: `अहम्`,
+  description: `अहम्`,
   openGraph: {
     images: [HOME_OG_IMAGE_URL],
   },
@@ -56,9 +56,11 @@ export default function RootLayout({
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body className={inter.className}>
-        <Header />
-        <div className="min-h-screen">{children}</div>
+      <body className={`${inter.className} bg-black text-white`}>
+        <Container>
+          <Header />
+          <div className="h-full">{children}</div>
+        </Container>
       </body>
     </html>
   );
