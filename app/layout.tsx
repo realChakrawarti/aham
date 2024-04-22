@@ -9,8 +9,8 @@ import Container from "@/components/container";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `अहम्`,
-  description: `अहम्`,
+  title: `${process.env.BRAND_NAME}`,
+  description: `${process.env.BRAND_NAME}`,
   openGraph: {
     images: [HOME_OG_IMAGE_URL],
   },

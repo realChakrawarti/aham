@@ -17,7 +17,7 @@ export default async function Post({ params }: Params) {
       <article>
         <p>{blog.title}</p>
         <p>{blog.date}</p>
-        <ContentRenderer content={blog.content} />
+        <ContentRenderer content={blog.content || ""} />
       </article>
     </main>
   );
@@ -36,7 +36,7 @@ export function generateMetadata({ params }: Params): Metadata {
     return notFound();
   }
 
-  const title = `${post.title} | अहम्`;
+  const title = `${post.title} | ${process.env.BRAND_NAME}`;
 
   return {
     title,
