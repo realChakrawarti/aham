@@ -10,7 +10,7 @@ import {
 
 export default function Header() {
   return (
-    <Navbar className="bg-transparent sm:px-0" fluid rounded>
+    <Navbar className="dark:bg-transparent sm:px-0" fluid rounded>
       <NavbarBrand as={Link} href="/">
         <span className="self-center whitespace-nowrap text-xl font-semibold">
           {process.env.BRAND_NAME}
@@ -19,7 +19,11 @@ export default function Header() {
       <NavbarToggle />
       <NavbarCollapse>
         {navPaths.map((nav) => (
-          <NavbarLink key={nav.path} href={nav.path}>
+          <NavbarLink
+            className="md:text-lg md:hover:underline md:hover:underline-offset-4 text-default border-none"
+            key={nav.path}
+            href={nav.path}
+          >
             {nav.label}
           </NavbarLink>
         ))}

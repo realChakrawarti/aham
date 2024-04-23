@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 
 import "./globals.css";
 import Header from "@/components/header";
-import Container from "@/components/container";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -56,11 +56,12 @@ export default function RootLayout({
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body className={`${inter.className} bg-black text-white`}>
-        <Container>
-          <Header />
-          <div className="h-full">{children}</div>
-        </Container>
+      <body
+        className={`${inter.className} dark h-screen bg-dark text-default flex flex-col container mx-auto px-5`}
+      >
+        <Header />
+        <main className="flex-grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );

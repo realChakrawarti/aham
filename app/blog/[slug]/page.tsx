@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getAllDocs, getDocBySlug } from "@/services/getDocsByPath";
 import { blogDirectory } from "@/services/paths";
 import { BasicDocumentProps } from "@/interfaces/doc";
-import ContentRenderer from "@/components/content-renderer.new";
+import ContentRenderer from "@/components/content-renderer";
 
 export default async function Post({ params }: Params) {
   const blog = getDocBySlug<BasicDocumentProps>(params.slug, blogDirectory);
@@ -13,13 +13,13 @@ export default async function Post({ params }: Params) {
   }
 
   return (
-    <main>
-      <article>
-        <p>{blog.title}</p>
-        <p>{blog.date}</p>
-        <ContentRenderer content={blog.content || ""} />
-      </article>
-    </main>
+    <article className="mx-auto w-full max-w-2xl">
+      <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+        {blog.title}
+      </h1>
+      <p>{blog.date}</p>
+      <ContentRenderer content={blog.content || ""} />
+    </article>
   );
 }
 

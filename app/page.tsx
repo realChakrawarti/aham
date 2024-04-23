@@ -1,3 +1,4 @@
+import BlogPreview from "@/components/blog-preview.new";
 import { HomeCard } from "@/components/home-card";
 import { getHomeContent } from "@/services/getHomeContent";
 
@@ -5,9 +6,9 @@ export default function Index() {
   const homePosts = getHomeContent();
 
   return (
-    <div>
-      <h1>Blogs</h1>
-      <main className="dark grid grid-cols-12 gap-4">
+    <>
+      <h1 className="text-2xl py-2">Recent posts</h1>
+      <div className="grid grid-cols-12 gap-4">
         {homePosts.blogs.map((post) => {
           return (
             <HomeCard
@@ -20,22 +21,22 @@ export default function Index() {
             />
           );
         })}
-      </main>
-      <h1>Notes</h1>
-      <main className="dark grid grid-cols-12 gap-4">
-        {homePosts.notes.map((post) => {
+      </div>
+
+      <div className="mt-4">
+        {homePosts.blogs.map((post) => {
           return (
-            <HomeCard
-              className="col-span-12 md:col-span-6 lg:col-span-4"
+            <BlogPreview
               key={post.title}
               date={post.date}
               slug={post.slug}
               title={post.title}
+              tags={post.tags || []}
               excerpt={post.excerpt}
             />
           );
         })}
-      </main>
-    </div>
+      </div>
+    </>
   );
 }

@@ -14,15 +14,25 @@ export function HomeCard({
   className,
 }: HomeCardProps) {
   return (
-    <Card className={`w-full ${className}`}>
-      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-        {title}
-      </h5>
-      <p className="font-normal text-gray-700 dark:text-gray-400">{excerpt}</p>
-      <Link href={`/blog/${slug}`}>
-        Read more
+    <Card className={`w-full flex flex-col ${className}`}>
+      <Link
+        className="hover:underline underline-offset-2"
+        href={`/blog/${slug}`}
+      >
+        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          {title}
+        </h5>
+      </Link>
+      <p className="flex-grow font-normal text-gray-700 dark:text-gray-400">
+        {excerpt}
+      </p>
+      <Link
+        className="flex gap-2 items-center hover:underline underline-offset-2"
+        href={`/blog/${slug}`}
+      >
+        <span>Read more</span>
         <svg
-          className="-mr-1 ml-2 h-4 w-4"
+          className="h-4 w-4"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
