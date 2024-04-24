@@ -3,7 +3,7 @@
  */
 
 const isProduction = process.env.NODE_ENV === "production" || false;
-const prefixPath = process.env.BASE_URI;
+const prefixPath = process.env.BASE_PATH;
 
 const nextConfig = {
   reactStrictMode: true,
