@@ -16,13 +16,13 @@ export default function Header() {
 
   return (
     <Navbar
-      className="sticky top-0 z-50 dark:bg-dark bg-dark sm:px-0"
+      className="sticky top-0 z-50 dark:bg-dark rounded-none bg-dark transition-colors duration-500 sm:px-0 dark:backdrop-blur-sm dark:bg-dark/10"
       fluid
       rounded
     >
       <NavbarBrand as={Link} href="/">
-        <span className="self-center whitespace-nowrap text-xl font-semibold">
-          LOGO
+        <span className="outline outline-offset-2 outline-1 self-center whitespace-nowrap text-xl font-semibold">
+          AHAM
         </span>
       </NavbarBrand>
       <NavbarToggle />
