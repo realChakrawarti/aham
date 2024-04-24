@@ -6,13 +6,7 @@ interface HomeCardProps extends BasicDocumentProps {
   className: string;
 }
 
-export function HomeCard({
-  title,
-  excerpt,
-  slug,
-  date,
-  className,
-}: HomeCardProps) {
+export function HomeCard({ title, excerpt, slug, className }: HomeCardProps) {
   return (
     <Card className={`w-full flex flex-col ${className}`}>
       <Link
@@ -27,7 +21,7 @@ export function HomeCard({
         {excerpt}
       </p>
       <Link
-        className="flex gap-2 items-center hover:underline underline-offset-2"
+        className="flex gap-2 items-center hover:underline underline-offset-2 text-link font-semibold"
         href={`/blog/${slug}`}
       >
         <span>Read more</span>

@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllDocs, getDocBySlug } from "@/services/getDocsByPath";
-import { blogDirectory } from "@/services/paths";
+import { noteDirectory } from "@/services/paths";
 import { BasicDocumentProps } from "@/interfaces/doc";
 import ContentRenderer from "@/components/content-renderer";
 
-export default async function Post({ params }: Params) {
-  const blog = getDocBySlug<BasicDocumentProps>(params.slug, blogDirectory);
+export default async function NoteSlug({ params }: Params) {
+  const blog = getDocBySlug<BasicDocumentProps>(params.slug, noteDirectory);
 
   if (!blog) {
     return notFound();
@@ -30,7 +30,7 @@ type Params = {
 };
 
 export function generateMetadata({ params }: Params): Metadata {
-  const post = getDocBySlug<BasicDocumentProps>(params.slug, blogDirectory);
+  const post = getDocBySlug<BasicDocumentProps>(params.slug, noteDirectory);
 
   if (!post) {
     return notFound();
@@ -48,7 +48,7 @@ export function generateMetadata({ params }: Params): Metadata {
 }
 
 export async function generateStaticParams() {
-  const blogs = getAllDocs(blogDirectory, "blog");
+  const blogs = getAllDocs(noteDirectory, "note");
 
   return blogs.map((blog) => ({
     slug: blog.slug,

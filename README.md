@@ -61,3 +61,13 @@ Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&ut
 # Notes
 
 `blog-starter` uses [Tailwind CSS](https://tailwindcss.com) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3).
+
+
+# Attributions
+
+- https://tailwindcomponents.com/component/blog-feeds
+- https://flowbite.com/blocks/publisher/blog-templates/#default-blog-template
+- https://flowbite.com/blocks/e-commerce/customer-service/#default-customer-service
+- https://flowbite.com/docs/components/card/#card-with-button
+- https://flowbite.com/docs/components/navbar/#default-navbar
+- https://tailwindcomponents.com/component/free-tailwind-css-note-component

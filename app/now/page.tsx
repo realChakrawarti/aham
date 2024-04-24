@@ -3,7 +3,7 @@ import { getAllDocs } from "@/services/getDocsByPath";
 import { nowDirectory } from "@/services/paths";
 
 export default function Now() {
-  const now = getAllDocs(nowDirectory);
+  const now = getAllDocs(nowDirectory, "now");
 
   return (
     <div>

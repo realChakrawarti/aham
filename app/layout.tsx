@@ -1,13 +1,12 @@
 import { HOME_OG_IMAGE_URL } from "@/utils/constants";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { basePath } from "@/next.config";
-
-const inter = Inter({ subsets: ["latin"] });
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 
 export const metadata: Metadata = {
   title: `${process.env.BRAND_NAME}`,
@@ -23,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className={`${GeistSans.variable} ${GeistMono.variable}`} lang="en">
       <head>
         <link
           rel="apple-touch-icon"
@@ -62,10 +61,10 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.className} dark h-screen bg-dark text-default flex flex-col container mx-auto px-5`}
+        className={`dark h-screen font-sans bg-dark text-default flex flex-col container mx-auto px-5`}
       >
         <Header />
-        <main className="flex-grow">{children}</main>
+        <main className="py-10 px-6 flex-grow">{children}</main>
         <Footer />
       </body>
     </html>

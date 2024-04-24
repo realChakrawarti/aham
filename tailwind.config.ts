@@ -19,6 +19,7 @@ const config: Config = {
       colors: {
         excerpt: "#9ca3af",
         dark: "#111827",
+        link: "#047481",
         default: "#FAFAFA",
         "accent-2": "#EAEAEA",
         "accent-7": "#333",
@@ -36,6 +37,10 @@ const config: Config = {
         "6xl": "2.75rem",
         "7xl": "4.5rem",
         "8xl": "6.25rem",
+      },
+      fontFamily: {
+        sans: ["var(--font-geist-sans)"],
+        mono: ["var(--font-geist-mono)"],
       },
       boxShadow: {
         sm: "0 5px 10px rgba(0, 0, 0, 0.12)",

@@ -18,11 +18,12 @@ export function getDocBySlug<T>(slug: string, directory: string) {
   return docData;
 }
 
-export function getAllDocs(directory: string) {
+export function getAllDocs(directory: string, type: string) {
   const slugs = getDocSlugs(directory);
   const docs = slugs
     .map((slug) => getDocBySlug(slug, directory) as BasicDocumentProps)
     // sort posts by date in descending order
-    .sort((doc1, doc2) => (doc1.date > doc2.date ? -1 : 1));
+    .sort((doc1, doc2) => (doc1.date > doc2.date ? -1 : 1))
+    .map((content) => ({ ...content, type: type }));
   return docs;
 }
