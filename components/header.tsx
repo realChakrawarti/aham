@@ -20,6 +20,7 @@ export default function Header() {
       <NavbarCollapse>
         {navPaths.map((nav) => (
           <NavbarLink
+            as={Link}
             className="md:text-lg md:hover:underline md:hover:underline-offset-4 text-default border-none"
             key={nav.path}
             href={nav.path}
