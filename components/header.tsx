@@ -15,7 +15,11 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <Navbar className="dark:bg-transparent sm:px-0" fluid rounded>
+    <Navbar
+      className="sticky top-0 z-50 dark:bg-dark bg-dark sm:px-0"
+      fluid
+      rounded
+    >
       <NavbarBrand as={Link} href="/">
         <span className="self-center whitespace-nowrap text-xl font-semibold">
           LOGO

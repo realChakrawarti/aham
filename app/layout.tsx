@@ -61,7 +61,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`dark h-screen font-sans bg-dark text-default flex flex-col container mx-auto px-5`}
+        className={`dark min-h-screen font-sans bg-dark text-default flex flex-col container mx-auto px-5`}
       >
         <Header />
         <main className="py-10 px-6 flex-grow">{children}</main>

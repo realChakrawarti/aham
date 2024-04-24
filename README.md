@@ -71,3 +71,5 @@ Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&ut
 - https://flowbite.com/docs/components/card/#card-with-button
 - https://flowbite.com/docs/components/navbar/#default-navbar
 - https://tailwindcomponents.com/component/free-tailwind-css-note-component
+
+https://github.com/highlightjs/highlight.js/tree/main/src/styles
