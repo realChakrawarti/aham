@@ -18,8 +18,10 @@ const config: Config = {
       },
       colors: {
         excerpt: "#9ca3af",
-        dark: "#111827",
+        dark: "#01050c",
+        box: "inherit",
         link: "#047481",
+        action: "#77e4ff",
         default: "#FAFAFA",
         "accent-2": "#EAEAEA",
         "accent-7": "#333",

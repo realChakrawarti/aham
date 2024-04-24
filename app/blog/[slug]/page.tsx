@@ -4,6 +4,7 @@ import { getAllDocs, getDocBySlug } from "@/services/getDocsByPath";
 import { blogDirectory } from "@/services/paths";
 import { BasicDocumentProps } from "@/interfaces/doc";
 import ContentRenderer from "@/components/content-renderer";
+import DateFormatter from "@/components/date-formatter";
 
 export default async function Post({ params }: Params) {
   const blog = getDocBySlug<BasicDocumentProps>(params.slug, blogDirectory);
@@ -14,10 +15,12 @@ export default async function Post({ params }: Params) {
 
   return (
     <article className="mx-auto w-full max-w-2xl">
-      <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+      <h1 className="mb-4 text-3xl font-extrabold leading-tight lg:mb-6 lg:text-4xl dark:text-default">
         {blog.title}
       </h1>
-      <p>{blog.date}</p>
+      <p className="text-excerpt py-4">
+        <DateFormatter dateString={blog.date} />
+      </p>
       <ContentRenderer content={blog.content || ""} />
     </article>
   );

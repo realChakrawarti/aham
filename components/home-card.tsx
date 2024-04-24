@@ -8,7 +8,9 @@ interface HomeCardProps extends BasicDocumentProps {
 
 export function HomeCard({ title, excerpt, slug, className }: HomeCardProps) {
   return (
-    <Card className={`w-full flex flex-col ${className}`}>
+    <Card
+      className={`w-full dark:bg-box dark:border-link flex flex-col ${className}`}
+    >
       <Link
         className="hover:underline underline-offset-2"
         href={`/blog/${slug}`}

@@ -1,5 +1,8 @@
+"use client";
+
 import { navPaths } from "@/services/paths";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Navbar,
   NavbarBrand,
@@ -9,25 +12,32 @@ import {
 } from "flowbite-react";
 
 export default function Header() {
+  const pathname = usePathname();
+
   return (
     <Navbar className="dark:bg-transparent sm:px-0" fluid rounded>
       <NavbarBrand as={Link} href="/">
         <span className="self-center whitespace-nowrap text-xl font-semibold">
-          {process.env.BRAND_NAME}
+          LOGO
         </span>
       </NavbarBrand>
       <NavbarToggle />
       <NavbarCollapse>
-        {navPaths.map((nav) => (
-          <NavbarLink
-            as={Link}
-            className="md:text-lg md:hover:underline md:hover:underline-offset-4 text-default border-none"
-            key={nav.path}
-            href={nav.path}
-          >
-            {nav.label}
-          </NavbarLink>
-        ))}
+        {navPaths.map((nav) => {
+          const checkActiveNav =
+            pathname.split("/")[1] === nav.path.split("/")[1];
+          return (
+            <NavbarLink
+              as={Link}
+              active={checkActiveNav}
+              className="md:text-lg md:hover:underline md:hover:underline-offset-4 text-default border-none"
+              key={nav.path}
+              href={nav.path}
+            >
+              {nav.label}
+            </NavbarLink>
+          );
+        })}
       </NavbarCollapse>
     </Navbar>
   );

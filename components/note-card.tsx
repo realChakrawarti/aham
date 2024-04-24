@@ -10,7 +10,7 @@ export default function NoteCard({
 }: BasicDocumentProps) {
   return (
     <Link href={`/note/${slug}`}>
-      <div className="w-full h-64 flex flex-col justify-between dark:bg-gray-800 bg-white dark:border-gray-700 rounded-lg border border-gray-400 py-5 px-4">
+      <div className="w-full h-64 flex flex-col justify-between dark:bg-box dark:border-link rounded-lg border py-5 px-4">
         <div>
           <h4 className="hover:underline underline-offset-2 text-default font-bold mb-3">
             {title}
