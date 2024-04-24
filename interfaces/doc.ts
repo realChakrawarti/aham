@@ -5,4 +5,5 @@ export interface BasicDocumentProps {
   title: string;
   excerpt: string;
   tags?: string[];
+  type: string;
 }

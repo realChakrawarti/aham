@@ -5,37 +5,31 @@ import ListPreview from "@/components/list-preview";
 export default function Index() {
   const homePosts = getHomeContent();
 
+  const cardContent = homePosts.slice(0, 6);
+  const listContent = homePosts.slice(6);
+
   return (
     <>
-      <h1 className="text-2xl py-2">Recent posts</h1>
+      <h1 className="text-2xl">Recent posts</h1>
+      <p className="text-excerpt text-base pt-2 pb-4">
+        10 most recent blogs and notes published, for more go to respective
+        section
+      </p>
       <div className="grid grid-cols-12 gap-4">
-        {homePosts.map((post) => {
+        {cardContent.map((post) => {
           return (
             <HomeCard
               className="col-span-12 md:col-span-6 lg:col-span-4"
               key={post.title}
-              date={post.date}
-              slug={post.slug}
-              title={post.title}
-              excerpt={post.excerpt}
+              {...post}
             />
           );
         })}
       </div>
 
       <div className="mt-4">
-        {homePosts.map((post) => {
-          return (
-            <ListPreview
-              primary
-              key={post.title}
-              date={post.date}
-              slug={post.slug}
-              title={post.title}
-              tags={post.tags || []}
-              excerpt={post.excerpt}
-            />
-          );
+        {listContent.map((post) => {
+          return <ListPreview primary {...post} />;
         })}
       </div>
     </>

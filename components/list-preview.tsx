@@ -13,6 +13,7 @@ export default function ListPreview({
   excerpt,
   tags,
   primary,
+  type,
 }: ListPreviewProps) {
   const primaryTag = tags?.at(0) || "";
   if (primary) {
@@ -37,7 +38,7 @@ export default function ListPreview({
           </h2>
           <p className="leading-relaxed text-excerpt">{excerpt}</p>
           <Link
-            href={`/blog/${slug}`}
+            href={`/${type}/${slug}`}
             className="hover:underline underline-offset-2 inline-flex items-center mt-4 text-link font-semibold"
           >
             Read more
@@ -63,9 +64,9 @@ export default function ListPreview({
         <div className="grid gap-4">
           <div className="flex items-center justify-between text-gray-500">
             <div>
-              {tags?.map((tag) => (
+              {tags?.map((tag, index) => (
                 <span
-                  key={tag}
+                  key={`${tag}-${index}`}
                   className="uppercase inline-block rounded bg-green-100 mr-2 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300 md:mb-0"
                 >
                   #{tag}

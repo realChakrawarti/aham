@@ -7,21 +7,21 @@ import ContentRenderer from "@/components/content-renderer";
 import DateFormatter from "@/components/date-formatter";
 
 export default async function NoteSlug({ params }: Params) {
-  const blog = getDocBySlug<BasicDocumentProps>(params.slug, noteDirectory);
+  const note = getDocBySlug<BasicDocumentProps>(params.slug, noteDirectory);
 
-  if (!blog) {
+  if (!note) {
     return notFound();
   }
 
   return (
     <article className="mx-auto w-full max-w-2xl">
       <h1 className="mb-4 text-3xl font-extrabold leading-tight lg:mb-6 lg:text-4xl dark:text-default">
-        {blog.title}
+        {note.title}
       </h1>
       <p className="text-excerpt py-4">
-        <DateFormatter dateString={blog.date} />
+        <DateFormatter dateString={note.date} />
       </p>
-      <ContentRenderer content={blog.content || ""} />
+      <ContentRenderer content={note.content || ""} />
     </article>
   );
 }
@@ -51,9 +51,9 @@ export function generateMetadata({ params }: Params): Metadata {
 }
 
 export async function generateStaticParams() {
-  const blogs = getAllDocs(noteDirectory, "note");
+  const notes = getAllDocs(noteDirectory, "note");
 
-  return blogs.map((blog) => ({
-    slug: blog.slug,
+  return notes.map((note) => ({
+    slug: note.slug,
   }));
 }

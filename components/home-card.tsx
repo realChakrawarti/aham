@@ -6,14 +6,20 @@ interface HomeCardProps extends BasicDocumentProps {
   className: string;
 }
 
-export function HomeCard({ title, excerpt, slug, className }: HomeCardProps) {
+export function HomeCard({
+  title,
+  excerpt,
+  slug,
+  className,
+  type,
+}: HomeCardProps) {
   return (
     <Card
       className={`w-full dark:bg-box dark:border-link flex flex-col ${className}`}
     >
       <Link
         className="hover:underline underline-offset-2"
-        href={`/blog/${slug}`}
+        href={`/${type}/${slug}`}
       >
         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {title}
