@@ -6,7 +6,7 @@ export default function ContentBack({ to }: { to: string }) {
       <div className="h-12 hidden absolute inset-0 lg:flex">
         <Link
           className="group flex font-semibold text-sm leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white"
-          href={to}
+          href={"/" + to}
         >
           <svg
             viewBox="0 -9 3 24"

@@ -1,5 +1,5 @@
 import { BasicDocumentProps } from "@/interfaces/doc";
-import { Button, Card } from "flowbite-react";
+import { Card } from "flowbite-react";
 import Link from "next/link";
 
 interface HomeCardProps extends BasicDocumentProps {
@@ -29,8 +29,8 @@ export function HomeCard({
         {excerpt}
       </p>
       <Link
-        className="flex gap-2 items-center hover:underline underline-offset-2 text-link font-semibold"
-        href={`/blog/${slug}`}
+        className="flex gap-2 items-center hover:underline underline-offset-2 text-link font-medium"
+        href={`/${type}/${slug}`}
       >
         <span>Read more</span>
         <svg

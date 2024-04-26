@@ -60,7 +60,7 @@ export default function RootLayout({
           href={`${basePath}/feed.xml" />`}
         />
       </head>
-      <body className="dark min-h-screen font-sans bg-dark text-default flex flex-col container mx-auto px-5 scroll-smooth">
+      <body className="dark min-h-screen font-sans bg-dark text-default flex flex-col container mx-auto scroll-smooth">
         <Header />
         <main className="py-10 px-6 flex-grow">{children}</main>
         <Footer />
