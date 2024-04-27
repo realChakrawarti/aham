@@ -1,5 +1,10 @@
-import { getAllDocs } from "./getDocsByPath";
-import { blogDirectory, noteDirectory } from "./paths";
+import { NotableArticleProps } from "@/interfaces/doc";
+import { getAllDocs, getDocBySlug, getDocSlugs } from "./getDocsByPath";
+import {
+  blogDirectory,
+  notableArticlesDirectory,
+  noteDirectory,
+} from "./paths";
 
 export const getHomeContent = () => {
   let data = [];
@@ -15,3 +20,14 @@ export const getHomeContent = () => {
 
   return sortedData;
 };
+
+export function getNotableArticles(limit: number) {
+  const directory = notableArticlesDirectory;
+  const slugs = getDocSlugs(directory);
+  let docsData: NotableArticleProps[] = [];
+  const docs = slugs.map((slug) => {
+    const yearData = getDocBySlug(slug, directory) as any;
+    docsData.push(...yearData.data);
+  });
+  return docsData.slice(0, 5);
+}

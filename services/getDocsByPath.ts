@@ -3,7 +3,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
-function getDocSlugs(directory: string) {
+export function getDocSlugs(directory: string) {
   return fs.readdirSync(directory);
 }
 

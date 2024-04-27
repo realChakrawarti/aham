@@ -7,3 +7,9 @@ export interface BasicDocumentProps {
   tags?: string[];
   type: string;
 }
+
+export interface NotableArticleProps {
+  tag: string[];
+  link: string;
+  label: string;
+}

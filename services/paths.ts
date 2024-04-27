@@ -27,3 +27,8 @@ export const blogDirectory = join(process.cwd(), "documents", "blog");
 export const noteDirectory = join(process.cwd(), "documents", "note");
 export const nowDirectory = join(process.cwd(), "documents", "now");
 export const projectDirectory = join(process.cwd(), "documents", "project");
+export const notableArticlesDirectory = join(
+  process.cwd(),
+  "documents",
+  "notable"
+);
