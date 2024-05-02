@@ -19,6 +19,7 @@ const config: Config = {
       colors: {
         excerpt: "#9ca3af",
         dark: "#01050c",
+        pre: "#111827",
         box: "inherit",
         action: "#047481",
         link: "#77e4ff",
