@@ -10,8 +10,6 @@ type Params = {
 
 export default function NotableArticle({ params }: Params) {
   const data = getNotableArticleBySlug(params.slug);
-
-  console.log(params.slug, "-", data);
   return <div>Hello</div>;
 }
 

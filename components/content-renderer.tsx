@@ -9,7 +9,8 @@ export default async function ContentRenderer({ content }: Props) {
 
   return (
     <div
-      className="prose prose-invert prose-xl lg:prose-base prose-pre:bg-pre md:prose-pre:mx-0
+      className="prose prose-invert prose-xl lg:prose-base prose-pre:bg-pre
+        prose-pre:rounded-none md:prose-pre:rounded-md md:prose-pre:mx-0
         md:prose-pre:w-full prose-pre:-mx-6 prose-pre:w-[calc(100%+48px)]
         prose-code:text-action"
       dangerouslySetInnerHTML={{ __html: htmlContent }}
