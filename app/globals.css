@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.header-anchor {
+  @apply no-underline before:text-excerpt before:mr-2 before:content-['#'] hover:cursor-pointer;
+}
+

@@ -1,12 +1,12 @@
-import { HOME_OG_IMAGE_URL } from "@/utils/constants";
-import type { Metadata } from "next";
+import { HOME_OG_IMAGE_URL } from '@/utils/constants';
+import type { Metadata } from 'next';
 
-import "./globals.css";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
-import { basePath } from "@/next.config";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+import './globals.css';
+import Header from '@/components/header';
+import Footer from '@/components/footer';
+import { basePath } from '@/next.config';
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 
 export const metadata: Metadata = {
   title: `${process.env.BRAND_NAME}`,
@@ -31,15 +31,14 @@ export default function RootLayout({
         />
         <link
           rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href={`${basePath}/favicon/favicon-32x32.png`}
+          type="image/svg+xml"
+          href={`${basePath}/favicon/icon.svg`}
         />
         <link
           rel="icon"
           type="image/png"
-          sizes="16x16"
-          href={`${basePath}/favicon/favicon-16x16.png`}
+          sizes="any"
+          href={`${basePath}/favicon/icon.png`}
         />
         <link rel="manifest" href={`${basePath}/favicon/site.webmanifest`} />
         <link
@@ -60,7 +59,10 @@ export default function RootLayout({
           href={`${basePath}/feed.xml" />`}
         />
       </head>
-      <body className="dark min-h-screen font-sans bg-dark text-default flex flex-col container mx-auto scroll-smooth">
+      <body
+        className="dark min-h-screen font-sans bg-dark text-default flex flex-col container mx-auto
+          scroll-smooth"
+      >
         <Header />
         <main className="py-10 px-6 flex-grow">{children}</main>
         <Footer />
