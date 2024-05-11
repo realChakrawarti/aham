@@ -1,6 +1,7 @@
-import Link from "next/link";
-import DateFormatter from "./date-formatter";
-import { BasicDocumentProps } from "@/interfaces/doc";
+import Link from 'next/link';
+import DateFormatter from './date-formatter';
+import { BasicDocumentProps } from '@/interfaces/doc';
+import Tag from './tag';
 
 interface ListPreviewProps extends BasicDocumentProps {
   primary?: boolean;
@@ -15,13 +16,13 @@ export default function ListPreview({
   primary,
   type,
 }: ListPreviewProps) {
-  const primaryTag = tags?.at(0) || "";
+  const primaryTag = tags?.at(0) || '';
   if (primary) {
     return (
       <div className="py-8 flex flex-wrap md:flex-nowrap items-baseline">
         <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
           <span className="text-gray-500 text-sm">
-            <DateFormatter dateString={date} />
+            <DateFormatter dateString={date} formatType="short" />
           </span>
         </div>
         <div className="md:flex-grow">
@@ -29,7 +30,8 @@ export default function ListPreview({
             {primaryTag && (
               <span
                 key={primaryTag}
-                className="font-semibold lowercase inline-block rounded bg-green-100 mr-2 px-2.5 text-base text-green-800 dark:bg-green-900 dark:text-green-300 md:mb-0"
+                className="font-semibold lowercase inline-block bg-green-100 mr-2 px-2.5 text-base
+                  text-green-800 dark:bg-green-900 dark:text-green-300 md:mb-0"
               >
                 #{primaryTag}
               </span>
@@ -39,7 +41,8 @@ export default function ListPreview({
           <p className="leading-relaxed text-excerpt">{excerpt}</p>
           <Link
             href={`/${type}/${slug}`}
-            className="hover:underline underline-offset-2 inline-flex items-center mt-4 text-link font-semibold"
+            className="hover:underline underline-offset-2 inline-flex items-center mt-4 text-link
+              font-semibold"
           >
             Read more
             <svg
@@ -60,21 +63,15 @@ export default function ListPreview({
     );
   } else {
     return (
-      <div className="space-y-4 py-6 md:py-8">
-        <div className="grid gap-4">
+      <div className="space-y-1 py-6 md:py-8">
+        <div className="grid gap-2">
           <div className="flex items-center justify-between text-gray-500">
-            <div>
-              {tags?.map((tag, index) => (
-                <span
-                  key={`${tag}-${index}`}
-                  className="uppercase inline-block rounded bg-green-100 mr-2 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300 md:mb-0"
-                >
-                  #{tag}
-                </span>
-              ))}
+            <div className="flex gap-2">
+              {tags?.map((tag) => <Tag key={tag} label={tag} />)}
             </div>
             <span className="text-sm">
-              Published on <DateFormatter dateString={date} />
+              Published on{' '}
+              <DateFormatter dateString={date} formatType="short" />
             </span>
           </div>
 
@@ -85,7 +82,7 @@ export default function ListPreview({
             <h2>{title}</h2>
           </Link>
         </div>
-        <p className="text-base font-normal text-excerpt ">{excerpt}</p>
+        <p className="text-base font-normal text-excerpt">{excerpt}</p>
       </div>
     );
   }

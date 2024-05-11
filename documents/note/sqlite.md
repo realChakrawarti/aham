@@ -1,7 +1,7 @@
 ---
 title: "Introduction to SQLite3"
 excerpt: "Dives into SQLite3 commands and basic queries"
-date: 1707091200000
+date: "2024-02-05"
 tags: ['SQLite']
 ---
 

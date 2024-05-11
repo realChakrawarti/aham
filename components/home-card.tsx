@@ -1,6 +1,7 @@
-import { BasicDocumentProps } from "@/interfaces/doc";
-import { Card } from "flowbite-react";
-import Link from "next/link";
+import { BasicDocumentProps } from '@/interfaces/doc';
+import { Card } from 'flowbite-react';
+import Link from 'next/link';
+import DateFormatter from './date-formatter';
 
 interface HomeCardProps extends BasicDocumentProps {
   className: string;
@@ -12,11 +13,15 @@ export function HomeCard({
   slug,
   className,
   type,
+  date,
 }: HomeCardProps) {
   return (
     <Card
-      className={`w-full dark:bg-box dark:border-link flex flex-col ${className}`}
+      className={`w-full dark:bg-box dark:border-link flex flex-col rounded-none ${className}`}
     >
+      <p className="text-excerpt text-sm">
+        <DateFormatter dateString={date} formatType="short" />
+      </p>
       <Link
         className="hover:underline underline-offset-2"
         href={`/${type}/${slug}`}

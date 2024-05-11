@@ -1,7 +1,7 @@
 ---
 title: "SEO using microdata"
 excerpt: "Improve SEO rankings using built-in HTML microdata tags"
-date: 1715270092321
+date: "2024-05-09"
 tags: ['SEO', 'HTML']
 ---
 

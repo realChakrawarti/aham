@@ -1,7 +1,7 @@
 ---
 title: "Expression vs Statement"
 excerpt: "Know what are expression and statements in JavaScript"
-date: 1610845200000
+date: "2021-01-17"
 tags: ['JavaScript']
 ---
 

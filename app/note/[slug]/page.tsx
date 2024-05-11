@@ -22,7 +22,7 @@ export default async function NoteSlug({ params }: Params) {
           {note.title}
         </h1>
         <p className="text-excerpt py-4">
-          <DateFormatter dateString={note.date} />
+          <DateFormatter dateString={note.date} formatType="long" />
         </p>
         <ContentRenderer content={note.content || ""} />
       </article>

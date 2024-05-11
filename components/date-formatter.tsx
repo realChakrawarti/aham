@@ -1,12 +1,17 @@
-import { format } from "date-fns";
+import { format, parseISO } from 'date-fns';
 
 type Props = {
   dateString: string;
+  formatType: 'short' | 'long';
 };
 
-const DateFormatter = ({ dateString }: Props) => {
-  const date = new Date(dateString);
-  return <time dateTime={dateString}>{format(date, "LLLL	d, yyyy")}</time>;
+const DateFormatter = ({ dateString, formatType }: Props) => {
+  const date = parseISO(dateString);
+
+  if (formatType === 'short')
+    return <time dateTime={dateString}>{format(date, 'PP')}</time>;
+  if (formatType === 'long')
+    return <time dateTime={dateString}>{format(date, 'PPP')}</time>;
 };
 
 export default DateFormatter;

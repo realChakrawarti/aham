@@ -1,7 +1,7 @@
 ---
 title: "How to Setup Windows Subsystem for Linux (WSL)"
 excerpt: "Step by step to setup WSL on Windows OS"
-date: 1707071400000
+date: "2024-02-04"
 tags: ['WSL', 'Linux', 'Windows']
 ---
 

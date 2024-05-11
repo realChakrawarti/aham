@@ -30,7 +30,7 @@ export default async function Post({ params }: Params) {
           </p>
         </h1>
         <p className="text-excerpt py-4">
-          <DateFormatter dateString={blog.date} />
+          <DateFormatter dateString={blog.date} formatType="long" />
         </p>
         <ContentRenderer content={blog.content || ""} />
       </article>
