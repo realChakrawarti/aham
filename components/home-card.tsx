@@ -34,7 +34,7 @@ export function HomeCard({
         {excerpt}
       </p>
       <Link
-        className="flex gap-2 items-center hover:underline underline-offset-2 text-link font-medium"
+        className="flex gap-2 items-center hover:underline underline-offset-2 text-link hover:brightness-[110%] font-medium"
         href={`/${type}/${slug}`}
       >
         <span>Read more</span>

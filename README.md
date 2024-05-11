@@ -73,3 +73,5 @@ Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&ut
 - https://tailwindcomponents.com/component/free-tailwind-css-note-component
 
 https://github.com/highlightjs/highlight.js/tree/main/src/styles
+
+https://aaronfrancis.com/2023/targeting-only-inline-code-elements-with-tailwind-typography-3b5e8d43
