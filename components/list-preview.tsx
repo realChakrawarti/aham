@@ -16,7 +16,6 @@ export default function ListPreview({
   primary,
   type,
 }: ListPreviewProps) {
-  const primaryTag = tags?.at(0) || '';
   if (primary) {
     return (
       <div className="py-8 flex flex-wrap md:flex-nowrap items-baseline">
@@ -27,15 +26,6 @@ export default function ListPreview({
         </div>
         <div className="md:flex-grow">
           <h2 className="text-2xl font-medium mb-2 text-default flex items-center">
-            {primaryTag && (
-              <span
-                key={primaryTag}
-                className="font-semibold lowercase inline-block bg-green-100 mr-2 px-2.5 text-base
-                  text-green-800 dark:bg-green-900 dark:text-green-300 md:mb-0"
-              >
-                #{primaryTag}
-              </span>
-            )}
             <p>{title}</p>
           </h2>
           <p className="leading-relaxed text-excerpt">{excerpt}</p>

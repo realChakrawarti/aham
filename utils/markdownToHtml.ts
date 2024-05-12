@@ -1,7 +1,5 @@
 import markdownit from 'markdown-it';
 import anchor from 'markdown-it-anchor';
-// @ts-ignore
-import toc from 'markdown-it-table-of-contents';
 import slugify from '@sindresorhus/slugify';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/obsidian.css';
@@ -25,9 +23,6 @@ export default async function markdownToHtml(markdown: string) {
     tabIndex: false,
     slugify: (s: string) => slugify(s),
     permalink: anchor.permalink.headerLink(),
-  });
-  md.use(toc, {
-    slugify: (s: string) => slugify(s),
   });
   md.linkify.set({ fuzzyEmail: false });
   const result = md.render(markdown);
