@@ -3,8 +3,15 @@ import anchor from 'markdown-it-anchor';
 import slugify from '@sindresorhus/slugify';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/obsidian.css';
+// @ts-ignore
+import { serverRender } from 'tocbot/src/js/server-render.js'
 
-export default async function markdownToHtml(markdown: string) {
+interface returnHtml {
+  content: string,
+  toc: string
+}
+
+export default async function markdownToHtml(markdown: string): Promise<returnHtml> {
   const md = markdownit({
     html: true,
     linkify: true,
@@ -25,6 +32,10 @@ export default async function markdownToHtml(markdown: string) {
     permalink: anchor.permalink.headerLink(),
   });
   md.linkify.set({ fuzzyEmail: false });
-  const result = md.render(markdown);
-  return result;
+  const content = md.render(markdown);
+  const toc = serverRender(content)
+  console.log('>>>>>', toc)
+  return {
+    content, toc
+  };
 }
