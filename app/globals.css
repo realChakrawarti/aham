@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .header-anchor {
-  @apply no-underline before:text-excerpt before:mr-2 before:content-['#'] hover:cursor-pointer;
+  @apply no-underline after:text-link after:ml-2 hover:text-link hover:after:content-['#'] hover:cursor-pointer;
 }
