@@ -23,6 +23,7 @@ export default async function markdownToHtml(markdown: string) {
     tabIndex: false,
     slugify: (s: string) => slugify(s),
     permalink: anchor.permalink.headerLink(),
+    callback: (token) => token.attrJoin('class', 'scroll-offset')
   });
   md.linkify.set({ fuzzyEmail: false });
   const result = md.render(markdown);

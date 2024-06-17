@@ -5,3 +5,7 @@
 .header-anchor {
   @apply no-underline after:text-link after:ml-2 hover:text-link hover:after:content-['#'] hover:cursor-pointer;
 }
+
+.scroll-offset {
+  @apply scroll-mt-[55px]
+}
