@@ -17,7 +17,7 @@ export function HomeCard({
 }: HomeCardProps) {
   return (
     <Card
-      className={`w-full dark:bg-box dark:border-link flex flex-col rounded-none ${className}`}
+      className={`w-full dark:bg-box border-custom flex flex-col rounded-none ${className}`}
     >
       <p className="text-excerpt text-sm">
         <DateFormatter dateString={date} formatType="short" />
