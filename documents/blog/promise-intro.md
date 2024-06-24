@@ -1,7 +1,7 @@
 ---
 title: "Promise in JavaScript - Introduction"
 excerpt: "Promises in JavaScript and how to handle asynchronous tasks"
-date: "2021-06-24"
+date: "2024-06-24"
 tags: ['JavaScript', 'Promise']
 ---
 
