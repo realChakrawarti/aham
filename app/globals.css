@@ -10,6 +10,10 @@
   @apply scroll-mt-[55px]
 }
 
+.header-social-item {
+  @apply size-5 hover:scale-105 hover:text-default text-excerpt transition-all
+}
+
 .border-custom {
   border-width: 1px;
   border-style: solid;

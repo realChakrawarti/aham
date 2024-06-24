@@ -44,11 +44,11 @@ export default function Index() {
             {notablePosts.map((article) => {
               return (
                 <li key={article.label}>
-                  <div className="flex flex-row-reverse gap-2">
+                  {/* <div className="flex flex-row-reverse gap-2">
                     {article.tag.map((item) => (
                       <Tag key={item} label={item} />
                     ))}
-                  </div>
+                  </div> */}
                   <a
                     className="text-link hover:underline underline-offset-2 visited:text-action"
                     href={article.link}
@@ -79,11 +79,11 @@ export default function Index() {
           {notablePosts.map((article) => {
             return (
               <li className="" key={article.label}>
-                <div className="flex gap-2">
+                {/* <div className="flex gap-2">
                   {article.tag.map((item) => (
                     <Tag key={item} label={item} />
                   ))}
-                </div>
+                </div> */}
                 <a
                   className="text-link hover:underline underline-offset-2 visited:text-action"
                   href={article.link}

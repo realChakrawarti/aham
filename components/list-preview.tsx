@@ -56,9 +56,9 @@ export default function ListPreview({
       <div className="space-y-1 py-6 md:py-8">
         <div className="grid gap-2">
           <div className="flex items-center justify-between text-gray-500">
-            <div className="flex gap-2">
+            {/* <div className="flex gap-2">
               {tags?.map((tag) => <Tag key={tag} label={tag} />)}
-            </div>
+            </div> */}
             <span className="text-sm">
               Published on{' '}
               <DateFormatter dateString={date} formatType="short" />
