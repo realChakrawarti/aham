@@ -18,21 +18,21 @@ export default function ListPreview({
 }: ListPreviewProps) {
   if (primary) {
     return (
-      <div className="py-8 flex flex-wrap md:flex-nowrap items-baseline">
+      <div className="py-8 flex flex-wrap md:flex-nowrap items-baseline gap-2">
         <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-          <span className="text-gray-500 text-sm">
+          <span className="text-gray-500 text-sm font-hilmar">
             <DateFormatter dateString={date} formatType="short" />
           </span>
         </div>
         <div className="md:flex-grow">
-          <h2 className="text-2xl font-medium mb-2 text-default flex items-center">
+          <h2 className="text-2xl font-medium mb-2 text-default flex items-center font-hilmar tracking-wider">
             <p>{title}</p>
           </h2>
-          <p className="leading-relaxed text-excerpt">{excerpt}</p>
+          <p className="leading-relaxed text-excerpt font-slalom">{excerpt}</p>
           <Link
             href={`/${type}/${slug}`}
             className="hover:underline underline-offset-2 inline-flex items-center mt-4 text-link
-              font-semibold"
+              font-semibold font-hilmar tracking-wider"
           >
             Read more
             <svg
@@ -59,20 +59,20 @@ export default function ListPreview({
             {/* <div className="flex gap-2">
               {tags?.map((tag) => <Tag key={tag} label={tag} />)}
             </div> */}
-            <span className="text-sm">
+            <span className="text-sm font-hilmar tracking-wide">
               Published on{' '}
               <DateFormatter dateString={date} formatType="short" />
             </span>
           </div>
 
           <Link
-            className="text-xl font-semibold text-default hover:underline underline-offset-2"
-            href={`/blog/${slug}`}
+            className="text-xl font-semibold text-default hover:underline underline-offset-2 font-hilmar tracking-wider"
+            href={`/${type}/${slug}`}
           >
             <h2>{title}</h2>
           </Link>
         </div>
-        <p className="text-base font-normal text-excerpt">{excerpt}</p>
+        <p className="text-base font-normal text-excerpt font-slalom">{excerpt}</p>
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllDocs, getDocBySlug } from "@/services/getDocsByPath";
-import { blogDirectory } from "@/services/paths";
+import { blogsDirectory } from "@/services/paths";
 import { BasicDocumentProps } from "@/interfaces/doc";
 import ContentRenderer from "@/components/content-renderer";
 import DateFormatter from "@/components/date-formatter";
@@ -10,7 +10,7 @@ import ScrollTop from "@/components/scroll-top";
 import ContentBack from "@/components/content-back";
 
 export default async function Post({ params }: Params) {
-  const blog = getDocBySlug<BasicDocumentProps>(params.slug, blogDirectory);
+  const blog = getDocBySlug<BasicDocumentProps>(params.slug, blogsDirectory);
 
   if (!blog) {
     return notFound();
@@ -23,7 +23,7 @@ export default async function Post({ params }: Params) {
       <ContentBack to={"blog"} />
       <ScrollTop />
       <article className="mx-auto w-full max-w-2xl">
-        <h1 className="mb-4 text-3xl font-extrabold leading-tight lg:mb-6 lg:text-4xl dark:text-default">
+        <h1 className="mb-4 text-3xl font-extrabold leading-tight lg:mb-6 lg:text-4xl dark:text-default font-hilmar tracking-wider">
           {blog.title}
           <p className="font-medium text-sm text-excerpt">
             {readTime.text} | {readTime.words} words
@@ -45,7 +45,7 @@ type Params = {
 };
 
 export function generateMetadata({ params }: Params): Metadata {
-  const post = getDocBySlug<BasicDocumentProps>(params.slug, blogDirectory);
+  const post = getDocBySlug<BasicDocumentProps>(params.slug, blogsDirectory);
 
   if (!post) {
     return notFound();
@@ -63,7 +63,7 @@ export function generateMetadata({ params }: Params): Metadata {
 }
 
 export async function generateStaticParams() {
-  const blogs = getAllDocs(blogDirectory, "blog");
+  const blogs = getAllDocs(blogsDirectory, "blog");
 
   return blogs.map((blog) => ({
     slug: blog.slug,

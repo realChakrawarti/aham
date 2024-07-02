@@ -1,8 +1,9 @@
 import { HomeCard } from '@/components/home-card';
 import { getHomeContent, getNotableArticles } from '@/services/getHomeContent';
 import ListPreview from '@/components/list-preview';
-import Tag from '@/components/tag';
+// import Tag from '@/components/tag';
 import { SectionSeparator } from '@/components/section-separator';
+import AboutMe from '@/components/about-me';
 
 export default function Index() {
   const homePosts = getHomeContent();
@@ -14,11 +15,12 @@ export default function Index() {
 
   return (
     <div className="flex flex-col">
-      <div className="block lg:flex w-full">
+      <AboutMe />
+      <div className="block lg:flex w-full mt-4">
         {/* 4 Home cards */}
         <div className="w-full lg:w-2/3 ">
-          <h1 className="text-2xl">Recent posts</h1>
-          <p className="text-excerpt text-base pt-2 pb-4">
+          <h1 className="text-2xl font-hilmar">Recent posts</h1>
+          <p className="text-excerpt text-base pt-2 pb-4 font-slalom">
             10 most recent blogs and notes published, for more go to respective
             section
           </p>
@@ -36,8 +38,8 @@ export default function Index() {
         </div>
         {/* Notable articles tablet/desktop */}
         <div className="hidden lg:block lg:w-1/3 flex-grow pl-4">
-          <h1 className="text-2xl text-right">Notable Articles</h1>
-          <p className="text-excerpt text-base pt-2 pb-4 text-right">
+          <h1 className="text-2xl text-right font-hilmar">Notable Articles</h1>
+          <p className="text-excerpt text-base pt-2 pb-4 text-right font-slalom">
             Top 5 articles read recently which are worth sharing
           </p>
           <ul className="text-right space-y-2">
@@ -50,7 +52,7 @@ export default function Index() {
                     ))}
                   </div> */}
                   <a
-                    className="text-link hover:underline underline-offset-2 visited:text-action"
+                    className="text-link hover:underline underline-offset-2 visited:text-action font-slalom"
                     href={article.link}
                     target="_blank"
                   >
