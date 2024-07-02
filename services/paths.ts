@@ -1,34 +1,30 @@
-import { join } from "path";
+import { join } from 'path';
 
 export const navPaths = [
   {
-    label: "Blog",
-    path: "/blog",
+    label: 'Blog',
+    path: '/blog',
   },
   {
-    label: "Note",
-    path: "/note",
+    label: 'Note',
+    path: '/note',
   },
   {
-    label: "Now",
-    path: "/now",
+    label: 'Project',
+    path: '/project',
   },
   {
-    label: "Project",
-    path: "/project",
-  },
-  {
-    label: "Resume",
-    path: "/resume",
+    label: 'Me',
+    path: '/me',
   },
 ];
 
-export const blogDirectory = join(process.cwd(), "documents", "blog");
-export const noteDirectory = join(process.cwd(), "documents", "note");
-export const nowDirectory = join(process.cwd(), "documents", "now");
-export const projectDirectory = join(process.cwd(), "documents", "project");
+export const blogDirectory = join(process.cwd(), 'documents', 'blog');
+export const noteDirectory = join(process.cwd(), 'documents', 'note');
+export const nowDirectory = join(process.cwd(), 'documents', 'now');
+export const projectDirectory = join(process.cwd(), 'documents', 'project');
 export const notableArticlesDirectory = join(
   process.cwd(),
-  "documents",
-  "notable"
+  'documents',
+  'notable',
 );

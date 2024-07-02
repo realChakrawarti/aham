@@ -7,6 +7,7 @@ import Footer from '@/components/footer';
 import { basePath } from '@/next.config';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
+// import FooterDocker from '@/components/footer-docker';
 
 export const metadata: Metadata = {
   title: `${process.env.BRAND_NAME}`,
@@ -65,6 +66,7 @@ export default function RootLayout({
       >
         <Header />
         <main className="py-10 px-6 flex-grow">{children}</main>
+        {/* <FooterDocker /> */}
         <Footer />
       </body>
     </html>

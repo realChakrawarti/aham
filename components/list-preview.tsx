@@ -67,7 +67,7 @@ export default function ListPreview({
 
           <Link
             className="text-xl font-semibold text-default hover:underline underline-offset-2"
-            href={`/blog/${slug}`}
+            href={`/${type}/${slug}`}
           >
             <h2>{title}</h2>
           </Link>

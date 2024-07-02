@@ -1,7 +1,7 @@
 import { HomeCard } from '@/components/home-card';
 import { getHomeContent, getNotableArticles } from '@/services/getHomeContent';
 import ListPreview from '@/components/list-preview';
-import Tag from '@/components/tag';
+// import Tag from '@/components/tag';
 import { SectionSeparator } from '@/components/section-separator';
 
 export default function Index() {
