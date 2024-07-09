@@ -66,9 +66,7 @@ export default function RootLayout({
           scroll-smooth"
       >
         <FooterDocker />
-        {/* <Header /> */}
         <main className="pt-6 pb-24 md:py-24 px-6 flex-grow">{children}</main>
-        <Footer />
       </body>
     </html>
   );

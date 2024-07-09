@@ -75,3 +75,14 @@ Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&ut
 https://github.com/highlightjs/highlight.js/tree/main/src/styles
 
 https://aaronfrancis.com/2023/targeting-only-inline-code-elements-with-tailwind-typography-3b5e8d43
+
+TODO:
+
+1. Page Transition
+2. SEO using Microdata
+3. Remove heavy usage of backticks
+4. Popper on dock
+5. Remove redundant code
+6. Profile page and Project page
+7. Pagination on blog and note routes
+8. Add og image and title

@@ -18,9 +18,9 @@ export default function ListPreview({
 }: ListPreviewProps) {
   if (primary) {
     return (
-      <div className="py-8 flex flex-wrap md:flex-nowrap items-baseline gap-2">
-        <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-          <span className="text-gray-500 text-sm font-hilmar">
+      <div className="py-8 flex flex-col md:flex-row items-baseline gap-4">
+        <div className="md:w-64 mb-0 flex-shrink-0">
+          <span className="text-sm font-hilmar text-excerpt">
             <DateFormatter dateString={date} formatType="short" />
           </span>
         </div>
@@ -31,7 +31,7 @@ export default function ListPreview({
           <p className="leading-relaxed text-excerpt font-slalom">{excerpt}</p>
           <Link
             href={`/${type}/${slug}`}
-            className="hover:underline underline-offset-2 inline-flex items-center mt-4 text-link
+            className="hover:underline underline-offset-2 inline-flex items-center mt-4 text-link hover:brightness-[110%]
               font-semibold font-hilmar tracking-wider"
           >
             Read more
@@ -55,11 +55,11 @@ export default function ListPreview({
     return (
       <div className="space-y-1 py-6 md:py-8">
         <div className="grid gap-2">
-          <div className="flex items-center justify-between text-gray-500">
+          <div className="flex items-center justify-between">
             {/* <div className="flex gap-2">
               {tags?.map((tag) => <Tag key={tag} label={tag} />)}
             </div> */}
-            <span className="text-sm font-hilmar tracking-wide">
+            <span className="text-sm font-hilmar tracking-wide text-excerpt">
               Published on{' '}
               <DateFormatter dateString={date} formatType="short" />
             </span>
