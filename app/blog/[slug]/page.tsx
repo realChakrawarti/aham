@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllDocs, getDocBySlug } from "@/services/getDocsByPath";
-import { blogDirectory } from "@/services/paths";
+import { blogsDirectory } from "@/services/paths";
 import { BasicDocumentProps } from "@/interfaces/doc";
 import ContentRenderer from "@/components/content-renderer";
 import DateFormatter from "@/components/date-formatter";
@@ -10,7 +10,7 @@ import ScrollTop from "@/components/scroll-top";
 import ContentBack from "@/components/content-back";
 
 export default async function Post({ params }: Params) {
-  const blog = getDocBySlug<BasicDocumentProps>(params.slug, blogDirectory);
+  const blog = getDocBySlug<BasicDocumentProps>(params.slug, blogsDirectory);
 
   if (!blog) {
     return notFound();
@@ -45,7 +45,7 @@ type Params = {
 };
 
 export function generateMetadata({ params }: Params): Metadata {
-  const post = getDocBySlug<BasicDocumentProps>(params.slug, blogDirectory);
+  const post = getDocBySlug<BasicDocumentProps>(params.slug, blogsDirectory);
 
   if (!post) {
     return notFound();
@@ -63,7 +63,7 @@ export function generateMetadata({ params }: Params): Metadata {
 }
 
 export async function generateStaticParams() {
-  const blogs = getAllDocs(blogDirectory, "blog");
+  const blogs = getAllDocs(blogsDirectory, "blog");
 
   return blogs.map((blog) => ({
     slug: blog.slug,

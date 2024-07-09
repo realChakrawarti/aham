@@ -1,14 +1,14 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { getAllDocs, getDocBySlug } from "@/services/getDocsByPath";
-import { noteDirectory } from "@/services/paths";
-import { BasicDocumentProps } from "@/interfaces/doc";
-import ContentRenderer from "@/components/content-renderer";
-import DateFormatter from "@/components/date-formatter";
-import ContentBack from "@/components/content-back";
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { getAllDocs, getDocBySlug } from '@/services/getDocsByPath';
+import { notesDirectory } from '@/services/paths';
+import { BasicDocumentProps } from '@/interfaces/doc';
+import ContentRenderer from '@/components/content-renderer';
+import DateFormatter from '@/components/date-formatter';
+import ContentBack from '@/components/content-back';
 
 export default async function NoteSlug({ params }: Params) {
-  const note = getDocBySlug<BasicDocumentProps>(params.slug, noteDirectory);
+  const note = getDocBySlug<BasicDocumentProps>(params.slug, notesDirectory);
 
   if (!note) {
     return notFound();
@@ -18,13 +18,16 @@ export default async function NoteSlug({ params }: Params) {
     <div className="relative">
       <ContentBack to="note" />
       <article className="mx-auto w-full max-w-2xl">
-        <h1 className="mb-4 text-3xl font-extrabold leading-tight lg:mb-6 lg:text-4xl dark:text-default">
+        <h1
+          className="mb-4 text-3xl font-extrabold leading-tight lg:mb-6 lg:text-4xl dark:text-default
+            font-hilmar tracking-wider"
+        >
           {note.title}
         </h1>
-        <p className="text-excerpt py-4">
+        <p className="text-excerpt py-4 font-hilmar tracking-wide">
           <DateFormatter dateString={note.date} formatType="long" />
         </p>
-        <ContentRenderer content={note.content || ""} />
+        <ContentRenderer content={note.content || ''} />
       </article>
     </div>
   );
@@ -37,7 +40,7 @@ type Params = {
 };
 
 export function generateMetadata({ params }: Params): Metadata {
-  const post = getDocBySlug<BasicDocumentProps>(params.slug, noteDirectory);
+  const post = getDocBySlug<BasicDocumentProps>(params.slug, notesDirectory);
 
   if (!post) {
     return notFound();
@@ -55,7 +58,7 @@ export function generateMetadata({ params }: Params): Metadata {
 }
 
 export async function generateStaticParams() {
-  const notes = getAllDocs(noteDirectory, "note");
+  const notes = getAllDocs(notesDirectory, 'note');
 
   return notes.map((note) => ({
     slug: note.slug,

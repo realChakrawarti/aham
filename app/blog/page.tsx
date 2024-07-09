@@ -1,9 +1,9 @@
 import ListPreview from "@/components/list-preview";
 import { getAllDocs } from "@/services/getDocsByPath";
-import { blogDirectory } from "@/services/paths";
+import { blogsDirectory } from "@/services/paths";
 
 export default function Blogs() {
-  const allBlogs = getAllDocs(blogDirectory, "blog");
+  const allBlogs = getAllDocs(blogsDirectory, "blog");
 
   return (
     <div className="divide-y divide-gray-800">

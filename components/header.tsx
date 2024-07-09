@@ -1,19 +1,11 @@
-'use client';
-
-import { navPaths } from '@/services/paths';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+
 import {
   Navbar,
   NavbarBrand,
-  NavbarCollapse,
-  NavbarLink,
-  NavbarToggle,
 } from 'flowbite-react';
-import HeaderSocials from './header-socials';
+import FooterDocker from './footer-docker';
 export default function Header() {
-  const pathname = usePathname();
-
   return (
     <Navbar
       className="sticky px-6 top-0 z-50 dark:bg-dark rounded-none bg-dark transition-colors
@@ -26,28 +18,7 @@ export default function Header() {
           AHAM
         </span>
       </NavbarBrand>
-      <div className="flex md:order-2">
-        <HeaderSocials />
-      </div>
-      <NavbarToggle />
-      <NavbarCollapse>
-        {navPaths.map((nav) => {
-          const checkActiveNav =
-            pathname.split('/')[1] === nav.path.split('/')[1];
-          return (
-            <NavbarLink
-              as={Link}
-              active={checkActiveNav}
-              className="md:text-lg md:hover:underline md:hover:underline-offset-4 text-default
-                border-none"
-              key={nav.path}
-              href={nav.path}
-            >
-              {nav.label}
-            </NavbarLink>
-          );
-        })}
-      </NavbarCollapse>
+      {/* <FooterDocker /> */}
     </Navbar>
   );
 }

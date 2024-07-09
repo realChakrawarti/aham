@@ -4,7 +4,7 @@ import { IoMdDocument } from "react-icons/io";
 export default function AboutMe() {
   return (
     <div>
-      <section className="relative border border-custom p-4">
+      <section className="relative border border-custom p-4 font-hilmar tracking-wide">
 
       <a target="_blank" href="/resume.pdf">
         
@@ -14,7 +14,7 @@ export default function AboutMe() {
       <img className="size-28" src="https://avatars.githubusercontent.com/u/105297743?v=4" alt="profile-picture"/>
         <div className="flex flex-col">
       <p className="text-lg">
-        Hi, I'm Anupam Chakrawarti
+        Anupam Chakraborty
       </p>
       <p className="text-excerpt text-sm mt-1 flex-grow">Software Developer</p>
       <div>

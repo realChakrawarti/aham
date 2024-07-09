@@ -1,16 +1,16 @@
 import { NotableArticleProps } from "@/interfaces/doc";
 import { getAllDocs, getDocBySlug, getDocSlugs } from "./getDocsByPath";
 import {
-  blogDirectory,
+  blogsDirectory,
   notableArticlesDirectory,
-  noteDirectory,
+  notesDirectory,
 } from "./paths";
 
 export const getHomeContent = () => {
   let data = [];
 
-  const blogs = getAllDocs(blogDirectory, "blog").slice(0, 10);
-  const notes = getAllDocs(noteDirectory, "note").slice(0, 10);
+  const blogs = getAllDocs(blogsDirectory, "blog").slice(0, 10);
+  const notes = getAllDocs(notesDirectory, "note").slice(0, 10);
 
   data = [...blogs, ...notes];
 

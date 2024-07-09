@@ -19,22 +19,23 @@ export function HomeCard({
     <Card
       className={`w-full dark:bg-box border-custom flex flex-col rounded-none ${className}`}
     >
-      <p className="text-excerpt text-sm">
+      <p className="text-excerpt text-sm font-hilmar">
         <DateFormatter dateString={date} formatType="short" />
       </p>
       <Link
         className="hover:underline underline-offset-2"
         href={`/${type}/${slug}`}
       >
-        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <h5 className="text-2xl font-bold text-gray-900 dark:text-white font-hilmar tracking-wider">
           {title}
         </h5>
       </Link>
-      <p className="flex-grow font-normal text-gray-700 dark:text-gray-400">
+      <p className="flex-grow font-normal text-gray-700 dark:text-gray-400 font-slalom">
         {excerpt}
       </p>
       <Link
-        className="flex gap-2 items-center hover:underline underline-offset-2 text-link hover:brightness-[110%] font-medium"
+        className="flex gap-2 items-center hover:underline underline-offset-2 text-link
+          hover:brightness-[110%] font-medium font-hilmar tracking-wider"
         href={`/${type}/${slug}`}
       >
         <span>Read more</span>
