@@ -22,7 +22,7 @@ HTML elements include start tags, content, and end tags. HTML elements are part 
 
 Let’s say you created a `<div>` block and entered some text into it. A `<div>` filled with text then becomes a component of the HTML page. 
 
-A **tag**, along with the **content** within it, becomes a **component** and an **HTML element**. This will be rendered and displayed to the user.
+A tag, along with the content within it, becomes a component and an HTML element. This will be rendered and displayed to the user.
 
 ### Data Tag
 

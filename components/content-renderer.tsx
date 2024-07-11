@@ -8,16 +8,26 @@ type Props = {
 export default async function ContentRenderer({ content, showToc }: Props) {
   const { content: htmlContent, toc } = await markdownToHtml(content || '');
 
+  const inlineCode = `prose-inline-code:py-[2px] prose-inline-code:text-action 
+          prose-inline-code:mx-1 prose-inline-code:text-[85%] prose-inline-code:break-all
+          prose-inline-code:whitespace-nowrap prose-inline-code:font-slalom
+          prose-inline-code:border prose-inline-code:px-2
+          `;
+
+  const preCode = `prose-pre:rounded-none md:prose-pre:mx-0 md:prose-pre:w-full 
+          prose-pre:-mx-6 prose-pre:w-[calc(100%+48px)] prose-pre:font-hilmar 
+          prose-pre:bg-pre prose-pre:text-base
+          `;
+  const proseCode = `prose-code:before:hidden prose-code:after:hidden`;
+
   return (
     <>
-      <div
-        className="prose prose-invert prose-base lg:prose-lg prose-pre:bg-pre
-          prose-pre:rounded-none md:prose-pre:mx-0 md:prose-pre:w-full prose-pre:-mx-6
-          prose-pre:w-[calc(100%+48px)] prose-code:before:hidden prose-code:after:hidden
-          prose-a:break-all prose-inline-code:border prose-inline-code:px-2
-          prose-inline-code:py-[2px] prose-inline-code:text-action prose-inline-code:mx-1
-          prose-inline-code:text-[85%] prose-inline-code:break-all
-          prose-inline-code:whitespace-nowrap prose-inline-code:font-slalom font-slalom prose-headings:text-red-900"
+      <section
+        itemProp="articleBody"
+        className={`prose prose-invert prose-base lg:prose-lg prose-a:break-all font-slalom
+        prose-headings:text-red-900 prose-inline-code:leading-5
+        prose-strong:tracking-wider prose-strong:text-orange ${proseCode} ${inlineCode}
+        ${preCode}`}
         dangerouslySetInnerHTML={{ __html: htmlContent }}
       />
       {showToc && (

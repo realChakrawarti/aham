@@ -26,9 +26,9 @@ export function HomeCard({
         className="hover:underline underline-offset-2"
         href={`/${type}/${slug}`}
       >
-        <h5 className="text-2xl font-bold text-gray-900 dark:text-white font-hilmar tracking-wider">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white font-hilmar tracking-wider">
           {title}
-        </h5>
+        </h1>
       </Link>
       <p className="flex-grow font-normal text-gray-700 dark:text-gray-400 font-slalom">
         {excerpt}

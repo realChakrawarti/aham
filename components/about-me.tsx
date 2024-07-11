@@ -16,7 +16,7 @@ export default function AboutMe() {
       <p className="text-lg">
         Anupam Chakraborty
       </p>
-      <p className="text-excerpt text-sm mt-1 flex-grow">Software Developer</p>
+      <p className="text-excerpt text-sm mt-1 flex-grow">Software Developer @Crownstack</p>
       <div>
       <HeaderSocials />
       </div>

@@ -2,13 +2,10 @@ import { HOME_OG_IMAGE_URL } from '@/utils/constants';
 import type { Metadata } from 'next';
 
 import './globals.css';
-import Header from '@/components/header';
-import Footer from '@/components/footer';
 import { basePath } from '@/next.config';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import FooterDocker from '@/components/footer-docker';
-// import FooterDocker from '@/components/footer-docker';
 
 export const metadata: Metadata = {
   title: `${process.env.BRAND_NAME}`,

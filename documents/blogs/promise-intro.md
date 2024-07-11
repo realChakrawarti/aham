@@ -57,9 +57,9 @@ The promise constructor accepts an executor function.
 
 The executor is called with two arguments: resolve and reject. These are functions that may be used by the executor function to report eventual completion or failure of the deferred computation. Returning from the executor function does not mean that the deferred action has been completed but only that the request to eventually perform the deferred action has been accepted.
 
-### Static: `Promise.withResolvers()` method
+### Static: **Promise.withResolvers()** method
 
-A static method, called `withResolvers`, to the Promise constructor which returns a promise along with its resolution (resolve) and rejection (reject) functions conveniently exposed. The exposed methods within the top level can then be passed to other functions.
+A static method, called **withResolvers**, to the Promise constructor which returns a promise along with its resolution (resolve) and rejection (reject) functions conveniently exposed. The exposed methods within the top level can then be passed to other functions.
 
 Read more on TC39 proposal: https://github.com/tc39/proposal-promise-with-resolvers
 
@@ -89,11 +89,11 @@ promise
 
 ### Chained Promises
 
-The chain is composed of `then()` calls, and typically has a single `catch()` at the end, optionally followed by `finally()`.
+The chain is composed of *then()* calls, and typically has a single *catch()* at the end, optionally followed by *finally()*.
 
-The promise methods `then()`, `catch()`, and `finally()` are used to associate further action with a promise that becomes settled. The `then()` method takes up to two arguments; the first argument is a **callback function for the fulfilled case** of the promise, and the second argument is a **callback function for the rejected case**. The `catch()` and `finally()` methods call `then()` internally and make error handling less verbose. For example, a `catch()` is really just a then() without passing the fulfillment handler.
+The promise methods *then()*, *catch()*, and *finally()* are used to associate further action with a promise that becomes settled. The *then()* method takes up to two arguments; the first argument is a **callback function for the fulfilled case** of the promise, and the second argument is a **callback function for the rejected case**. The *catch()* and *finally()* methods call *then()* internally and make error handling less verbose. For example, a *catch()* is really just a then() without passing the fulfillment handler.
 
-The above example can be written only using `then()`, repurposed for `catch()` and `finally()`
+The above example can be written only using *then()*, repurposed for *catch()* and *finally()*
 
 ```js
 promise
@@ -104,11 +104,11 @@ promise
 .then(console.info('Promise has settled!'));
 ```
 
-#### The `async/await` keyword
+### The **async/await** keyword
 
-The most common way is to mark a function `async`, this changes from returning data to returning a promise. We can then use `await` within the function. When we `await` a promise, the function is **paused in a non-blocking way** until the promise settles. If the promise fulfills, you get the value back. If the promise rejects, the rejected value is thrown.
+The most common way is to mark a function **async**, this changes from returning data to returning a promise. We can then use **await** within the function. When we **await** a promise, the function is **paused in a non-blocking way** until the promise settles. If the promise fulfills, you get the value back. If the promise rejects, the rejected value is thrown.
 
-Async functions _always_ return a promise, whether we use `await` or not. That promise resolves with whatever the async function returns, or rejects with whatever the async function throws.
+Async functions _always_ return a promise, whether we use **await** or not. That promise resolves with whatever the async function returns, or rejects with whatever the async function throws.
 
 ```js
 // wait ms milliseconds
@@ -133,9 +133,9 @@ foo(); // returns a promise that rejects with Error('bar')
 
 **ANTI-PATTERN:** If the function by default returns a promise, don't mark it async, then await and return. Instead just return the promise. Though there is no harm in double wrapping a promise.
 
-## Static: `Promise.reject()` & `Promise.resolve()` methods
+## Static: **Promise.reject()** & **Promise.resolve()** methods
 
-### `Promise.resolve()`
+### Promise.resolve()
 If the value is a promise, that promise is returned; if the value is a thenable, Promise.resolve() will call the then() method with two callbacks it prepared; otherwise the returned promise will be fulfilled with the value.
 
 ```js
@@ -146,16 +146,19 @@ Promise.resolve("Success").then(
 );
 ```
 
-### `Promise.reject()`
+### Promise.reject()
 Returns a Promise object that is rejected with a given reason.
 
-This a short-hand for `new Promise((resolve, reject) => reject(reason))`
+This a short-hand for
 
+```js
+new Promise((resolve, reject) => reject(reason))
+```
 ## Static: Helpers methods
 
-### `Promise.all()`
+### Promise.all()
 
-**Promise.all()** waits for all fulfillments (or the first rejection).
+Promise.all() waits for all fulfillments (or the first rejection).
 
 Accepts an array of promises and returns a new promise which is fulfilled with an array of fulfillment values in the order of the promises passed, regardless of completion order once all the promises are fulfilled. 
 
@@ -163,7 +166,7 @@ If one gets rejected, the entire promises rejects with the reason of the first p
 
 If we pass in 4 promises that resolve after a timeout and one promise that rejects immediately, then Promise.all will reject immediately.
 
-For example: Upload 7 images concurrently, but if one of them fails, and the rest 6 that are in-flight, the entire call gets aborted. If multiple promises are dependent on each other, then it makes sense to use **Promise.all()**.
+For example: Upload 7 images concurrently, but if one of them fails, and the rest 6 that are in-flight, the entire call gets aborted. If multiple promises are dependent on each other, then it makes sense to use Promise.all().
 
 ```js
 const promiseOne = Promise.all([1, 2, 3, Promise.resolve(444)]);
@@ -176,7 +179,7 @@ console.log(promiseTwo);
 // { [[PromiseStatus]]:rejected, [[PromiseValue]]:555 }
 ```
 
-### `Promise.allSettled()`
+### Promise.allSettled()
 
 Returns a promise that is fulfilled with an array of promise state snapshots, but only after all the original promises have settled, i.e. become either fulfilled or rejected. 
 
@@ -201,7 +204,7 @@ Promise.allSettled([p1, p2]).then(result => console.log(result));
 ]
 ```
 
-### `Promise.any()`
+### Promise.any()
 
 Returns a promise that is fulfilled by the first given promise to be fulfilled, or rejected with an `AggregateError` holding the rejection reasons if all of the given promises are rejected.
 
@@ -222,7 +225,7 @@ Promise.any([p1Rejects, p2Rejects]).catch(res => console.log(res));
 // AggregateError: All promises were rejected
 ```
 
-### `Promise.race()`
+### Promise.race()
 
 Returns a new promise which is settled in the same way as the first passed promise to settle.
 

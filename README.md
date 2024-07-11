@@ -78,11 +78,24 @@ https://aaronfrancis.com/2023/targeting-only-inline-code-elements-with-tailwind-
 
 TODO:
 
-1. Page Transition
-2. SEO using Microdata
-3. Remove heavy usage of backticks
-4. Popper on dock
-5. Remove redundant code
-6. Profile page and Project page
-7. Pagination on blog and note routes
-8. Add og image and title
+[] Page Transition
+
+[] SEO using Microdata
+
+[] Remove heavy usage of backticks
+
+[] Popper on dock
+
+[] Remove redundant code
+
+[] Profile page and Project page
+
+[] Pagination on blog and note routes
+
+[] Add og image and title
+
+[] heading h5 used instead of h1 in home-box
+
+[] Add giscus
+
+[] Code blocks font update
