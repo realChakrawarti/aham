@@ -1,6 +1,6 @@
-import { BasicDocumentProps } from "@/interfaces/doc";
-import DateFormatter from "./date-formatter";
-import Link from "next/link";
+import { BasicDocumentProps } from '@/interfaces/doc';
+import DateFormatter from './date-formatter';
+import Link from 'next/link';
 
 export default function NoteCard({
   title,
@@ -10,7 +10,10 @@ export default function NoteCard({
 }: BasicDocumentProps) {
   return (
     <Link href={`/note/${slug}`}>
-      <div className="w-full h-40 flex flex-col justify-between dark:bg-box dark:border-link border py-5 px-4">
+      <div
+        className="w-full h-40 flex flex-col justify-between dark:bg-box dark:border-link border
+          py-5 px-4"
+      >
         <div>
           <h4 className="hover:underline underline-offset-2 text-default font-bold mb-3">
             {title}

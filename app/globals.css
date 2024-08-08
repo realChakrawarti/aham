@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@view-transition {
+  navigation: auto;
+}
 
 @font-face {
   font-family: slalom;
@@ -17,17 +20,17 @@
 }
 
 .scroll-offset {
-  @apply scroll-mt-[55px]
+  @apply scroll-mt-[55px];
 }
 
 .header-social-item {
-  @apply size-5 hover:scale-105 hover:text-default text-excerpt transition-all
+  @apply size-5 hover:scale-105 hover:text-default text-excerpt transition-all;
 }
 
 .border-custom {
   border-width: 1px;
   border-style: solid;
-  border-image: linear-gradient(to right, #77e4ff, #79FFE1) 1;
+  border-image: linear-gradient(to right, #77e4ff, #79ffe1) 1;
 }
 
 .font-hilmar {

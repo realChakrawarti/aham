@@ -80,9 +80,11 @@ TODO:
 
 [] Page Transition
 
-[] SEO using Microdata
+[] SEO using Microdata - Partial done
 
-[] Remove heavy usage of backticks
+[] Links like read more, add title perhaps
+
+[x] Remove heavy usage of backticks
 
 [] Popper on dock
 
@@ -94,8 +96,8 @@ TODO:
 
 [] Add og image and title
 
-[] heading h5 used instead of h1 in home-box
+[x] heading h5 used instead of h1 in home-box
 
 [] Add giscus
 
-[] Code blocks font update
+[x] Code blocks font update

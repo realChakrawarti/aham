@@ -1,6 +1,6 @@
-import cn from "classnames";
-import Link from "next/link";
-import StaticImage from "./static-image";
+import cn from 'classnames';
+import Link from 'next/link';
+import StaticImage from './static-image';
 
 type Props = {
   title: string;
@@ -13,8 +13,8 @@ const CoverImage = ({ title, src, slug }: Props) => {
     <StaticImage
       src={`${src}`}
       alt={`Cover Image for ${title}`}
-      className={cn("shadow-sm w-full", {
-        "hover:shadow-lg transition-shadow duration-200": slug,
+      className={cn('shadow-sm w-full', {
+        'hover:shadow-lg transition-shadow duration-200': slug,
       })}
       width={1300}
       height={630}

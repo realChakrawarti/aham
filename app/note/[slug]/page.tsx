@@ -6,6 +6,7 @@ import { BasicDocumentProps } from '@/interfaces/doc';
 import ContentRenderer from '@/components/content-renderer';
 import DateFormatter from '@/components/date-formatter';
 import ContentBack from '@/components/content-back';
+import { MdDateRange } from "react-icons/md";
 
 export default async function NoteSlug({ params }: Params) {
   const note = getDocBySlug<BasicDocumentProps>(params.slug, notesDirectory);
@@ -29,7 +30,8 @@ export default async function NoteSlug({ params }: Params) {
         >
           {note.title}
         </h1>
-        <p className="text-excerpt py-4 font-hilmar tracking-wide">
+        <p className="text-excerpt py-4 font-hilmar tracking-wide flex gap-2">
+          <MdDateRange className='size-5' />          
           <DateFormatter dateString={note.date} formatType="long" />
         </p>
         <ContentRenderer content={note.content || ''} />

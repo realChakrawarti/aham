@@ -8,6 +8,9 @@ import DateFormatter from '@/components/date-formatter';
 import { readingTime } from 'reading-time-estimator';
 import ScrollTop from '@/components/scroll-top';
 import ContentBack from '@/components/content-back';
+import { MdDateRange } from 'react-icons/md';
+import { TiDocumentText } from "react-icons/ti";
+import { FiClock } from "react-icons/fi";
 
 export default async function Post({ params }: Params) {
   const blog = getDocBySlug<BasicDocumentProps>(params.slug, blogsDirectory);
@@ -33,12 +36,16 @@ export default async function Post({ params }: Params) {
             font-hilmar tracking-wider"
         >
           {blog.title}
-          <p className="font-medium text-sm text-excerpt">
+        </h1>
+          <p className="font-medium text-sm text-excerpt flex gap-2 items-center font-hilmar tracking-wide">
+           <FiClock className='size-5' /> 
             <span itemProp="timeRequired">{readTime.text}</span> |{' '}
+
+            <TiDocumentText className='size-5' />
             <span itemProp="wordCount">{readTime.words}</span> words
           </p>
-        </h1>
-        <p className="text-excerpt py-4 font-hilmar">
+        <p className="text-excerpt py-4 font-hilmar flex gap-2 items-center">
+          <MdDateRange className="size-5" />
           <DateFormatter dateString={blog.date} formatType="long" />
         </p>
         <ContentRenderer content={blog.content || ''} />

@@ -40,10 +40,10 @@ export default function Index() {
         <p className="text-excerpt text-base pt-2 pb-4 font-slalom">
           Top 5 articles read recently which are worth sharing
         </p>
-        <div className='flex flex-col lg:flex-row gap-3'>
+        <div className="flex flex-col lg:flex-row gap-3">
           {notablePosts.map((article, index) => {
             return (
-              <span className='flex gap-2 items-center' key={article.label}>
+              <span className="flex gap-2 items-center" key={article.label}>
                 <a
                   className="text-link hover:underline underline-offset-2 visited:text-action font-slalom"
                   href={article.link}
@@ -51,7 +51,9 @@ export default function Index() {
                 >
                   {article.label}
                 </a>
-                {index !== notablePosts.length - 1 && <span className='hidden lg:inline-block'>|</span>}
+                {index !== notablePosts.length - 1 && (
+                  <span className="hidden lg:inline-block">|</span>
+                )}
               </span>
             );
           })}

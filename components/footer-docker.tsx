@@ -4,18 +4,27 @@ import { FaHome } from 'react-icons/fa';
 import { RiArticleFill } from 'react-icons/ri';
 import { FaRegStickyNote } from 'react-icons/fa';
 import { ImProfile } from 'react-icons/im';
-import { FaProjectDiagram } from "react-icons/fa";
+import { FaProjectDiagram } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
 
 import { navPaths } from '@/services/paths';
 import Link from 'next/link';
 
-const icons = [FaHome, RiArticleFill, FaRegStickyNote, ImProfile, FaProjectDiagram];
+const icons = [
+  FaHome,
+  RiArticleFill,
+  FaRegStickyNote,
+  ImProfile,
+  FaProjectDiagram,
+];
 
 export default function FooterDocker() {
   const pathname = usePathname();
   return (
-    <div className="pointer-events-none fixed top-[90%] md:top-[2%] inset-0 z-20 mx-auto mb-4 flex h-12 px-6">
+    <div
+      className="pointer-events-none fixed top-[90%] md:top-[2%] inset-0 z-20 mx-auto mb-4 flex
+        h-12 px-6"
+    >
       <div
         className="pointer-events-auto relative mx-auto flex h-full items-center rounded-[14px]
           bg-mauve-light-1
@@ -42,7 +51,9 @@ export default function FooterDocker() {
               key={nav.path}
               href={nav.path}
             >
-              <Icon className="size-5" />
+              <abbr title={nav.label}>
+                <Icon className="size-5" />
+              </abbr>
             </Link>
           );
         })}

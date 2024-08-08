@@ -1,12 +1,10 @@
-
 import { FaXTwitter } from 'react-icons/fa6';
 import { FaLinkedinIn } from 'react-icons/fa6';
 import { FaYoutube } from 'react-icons/fa6';
 import { FaGithub } from 'react-icons/fa6';
 import { SiGmail } from 'react-icons/si';
 
-
-export default function HeaderSocials () {
+export default function HeaderSocials() {
   return (
     <div className="flex flex-row gap-3">
       <a href="https://x.com/realChakrawarti" target="_blank">
@@ -26,5 +24,4 @@ export default function HeaderSocials () {
       </a>
     </div>
   );
-};
-
+}

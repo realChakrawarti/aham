@@ -2,6 +2,7 @@ import { BasicDocumentProps } from '@/interfaces/doc';
 import { Card } from 'flowbite-react';
 import Link from 'next/link';
 import DateFormatter from './date-formatter';
+import { MdDateRange } from 'react-icons/md';
 
 interface HomeCardProps extends BasicDocumentProps {
   className: string;
@@ -19,7 +20,8 @@ export function HomeCard({
     <Card
       className={`w-full dark:bg-box border-custom flex flex-col rounded-none ${className}`}
     >
-      <p className="text-excerpt text-sm font-hilmar">
+      <p className="text-excerpt text-sm font-hilmar flex gap-2 items-end">
+        <MdDateRange className="size-5" />
         <DateFormatter dateString={date} formatType="short" />
       </p>
       <Link

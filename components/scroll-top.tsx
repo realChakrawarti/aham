@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export default function ScrollTop() {
   const [show, setShow] = useState(false);
@@ -11,24 +11,24 @@ export default function ScrollTop() {
       else setShow(false);
     };
 
-    window.addEventListener("scroll", handleWindowScroll);
-    return () => window.removeEventListener("scroll", handleWindowScroll);
+    window.addEventListener('scroll', handleWindowScroll);
+    return () => window.removeEventListener('scroll', handleWindowScroll);
   }, []);
 
   const handleScrollTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <div
       className={`fixed bottom-12 right-8 hidden flex-col gap-3 ${
-        show ? "md:flex" : "md:hidden"
+        show ? 'md:flex' : 'md:hidden'
       }`}
     >
       <button
         aria-label="Scroll To Top"
         onClick={handleScrollTop}
-        className="rounded-full p-2 text-gray-500 transition-all dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-600"
+        className="border-custom p-2"
       >
         <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
           <path
