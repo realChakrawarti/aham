@@ -1,5 +1,7 @@
+import Link from 'next/link';
 import HeaderSocials from './header-socials';
 import { SiReactiveresume } from 'react-icons/si';
+import { SiNow } from 'react-icons/si';
 
 export default function AboutMe() {
   return (
@@ -10,6 +12,11 @@ export default function AboutMe() {
             <SiReactiveresume className="absolute size-5 top-2 right-2" />
           </abbr>
         </a>
+        <Link className="absolute bottom-1 right-2" href="/now">
+          <abbr title="Now">
+            <SiNow className="size-8" />
+          </abbr>
+        </Link>
         <div className="flex flex-row gap-4">
           <img
             className="size-28"

@@ -1,16 +1,22 @@
-import { BasicDocumentProps } from "@/interfaces/doc";
-import fs from "fs";
-import matter from "gray-matter";
-import { join } from "path";
+import { BasicDocumentProps } from '@/interfaces/doc';
+import fs from 'fs';
+import matter from 'gray-matter';
+import { join } from 'path';
 
 export function getDocSlugs(directory: string) {
   return fs.readdirSync(directory);
 }
 
+/**
+ *
+ * @param slug filename
+ * @param directory directory while the file exists
+ * @returns document data
+ */
 export function getDocBySlug<T>(slug: string, directory: string) {
-  const realSlug = slug.replace(/\.md$/, "");
+  const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(directory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
   const docData = { ...data, slug: realSlug, content } as T;

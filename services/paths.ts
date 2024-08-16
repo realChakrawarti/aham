@@ -23,12 +23,9 @@ export const navPaths = [
   }
 ];
 
-export const blogsDirectory = join(process.cwd(), 'documents', 'blogs');
-export const notesDirectory = join(process.cwd(), 'documents', 'notes');
-export const profileDirectory = join(process.cwd(), 'documents', 'profile');
-export const projectsDirectory = join(process.cwd(), 'documents', 'projects');
-export const notableArticlesDirectory = join(
-  process.cwd(),
-  'documents',
-  'notable',
-);
+const docsDirectory = join(process.cwd(), 'documents')
+
+export const blogsDirectory = join(docsDirectory, 'blogs');
+export const notesDirectory = join(docsDirectory, 'notes');
+export const miscDirectory = join(docsDirectory, 'misc')
+

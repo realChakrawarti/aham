@@ -1,12 +1,12 @@
 import { HomeCard } from '@/components/home-card';
-import { getHomeContent, getNotableArticles } from '@/services/getHomeContent';
+import { getHomeContent, getArticleLinks } from '@/services/getHomeContent';
 import AboutMe from '@/components/about-me';
 import { FooterDivider } from 'flowbite-react';
 
 export default function Index() {
   const homePosts = getHomeContent();
 
-  const notablePosts = getNotableArticles(5);
+  const notablePosts = getArticleLinks();
 
   const cardContent = homePosts.slice(0, 6);
 
@@ -16,9 +16,9 @@ export default function Index() {
       <div className="block lg:flex w-full mt-4">
         {/* 6 Home cards */}
         <div className="w-full ">
-          <h1 className="text-2xl font-hilmar">Recent posts</h1>
+          <h1 className="text-2xl font-hilmar">Recent posts : : Highlights</h1>
           <p className="text-excerpt text-base pt-2 pb-4 font-slalom">
-            Recent blogs and notes published, for more go to respective section
+            Recent blogs and notes published
           </p>
           <div className="grid grid-cols-12 gap-4">
             {cardContent.map((post) => {
@@ -36,9 +36,9 @@ export default function Index() {
       {/* Notable articles */}
       <div className="mt-4 block">
         <FooterDivider />
-        <h1 className="text-2xl font-hilmar">Notable Articles</h1>
+        <h1 className="text-2xl font-hilmar">Articles Links : : Highlights</h1>
         <p className="text-excerpt text-base pt-2 pb-4 font-slalom">
-          Top 5 articles read recently which are worth sharing
+          Articles read recently which are worth sharing
         </p>
         <div className="flex flex-col lg:flex-row gap-3">
           {notablePosts.map((article, index) => {
