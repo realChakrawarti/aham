@@ -2,7 +2,6 @@ import { HOME_OG_IMAGE_URL } from '@/utils/constants';
 import type { Metadata } from 'next';
 
 import './globals.css';
-import { basePath } from '@/next.config';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import FooterDocker from '@/components/footer-docker';
@@ -26,26 +25,26 @@ export default function RootLayout({
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href={`${basePath}/favicon/apple-touch-icon.png`}
+          href={`/favicon/apple-touch-icon.png`}
         />
         <link
           rel="icon"
           type="image/svg+xml"
-          href={`${basePath}/favicon/icon.svg`}
+          href={`/favicon/icon.svg`}
         />
         <link
           rel="icon"
           type="image/png"
           sizes="any"
-          href={`${basePath}/favicon/icon.png`}
+          href={`/favicon/icon.png`}
         />
-        <link rel="manifest" href={`${basePath}/favicon/site.webmanifest`} />
+        <link rel="manifest" href={`/favicon/site.webmanifest`} />
         <link
           rel="mask-icon"
-          href={`${basePath}/favicon/safari-pinned-tab.svg`}
+          href={`/favicon/safari-pinned-tab.svg`}
           color="#000000"
         />
-        <link rel="shortcut icon" href={`${basePath}/favicon/favicon.ico" /`} />
+        <link rel="shortcut icon" href={`/favicon/favicon.ico" /`} />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta
           name="msapplication-config"
@@ -55,7 +54,7 @@ export default function RootLayout({
         <link
           rel="alternate"
           type="application/rss+xml"
-          href={`${basePath}/feed.xml" />`}
+          href={`/feed.xml" />`}
         />
       </head>
       <body
