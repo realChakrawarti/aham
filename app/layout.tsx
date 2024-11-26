@@ -1,4 +1,3 @@
-import { HOME_OG_IMAGE_URL } from '@/utils/constants';
 import type { Metadata } from 'next';
 
 import './globals.css';
@@ -7,11 +6,8 @@ import { GeistMono } from 'geist/font/mono';
 import FooterDocker from '@/components/footer-docker';
 
 export const metadata: Metadata = {
-  title: `${process.env.BRAND_NAME}`,
-  description: `${process.env.BRAND_NAME}`,
-  openGraph: {
-    images: [HOME_OG_IMAGE_URL],
-  },
+  title: `Home | A ${process.env.BRAND_NAME}`,
+  description: "Anupam Chakrawarti | Folio",
 };
 
 export default function RootLayout({

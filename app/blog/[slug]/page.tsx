@@ -67,7 +67,7 @@ export function generateMetadata({ params }: Params): Metadata {
     return notFound();
   }
 
-  const title = `${post.title} | ${process.env.BRAND_NAME}`;
+  const title = `${post.title} | A ${process.env.BRAND_NAME}`;
 
   return {
     title,
